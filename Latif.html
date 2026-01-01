@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerology Analyst | Latif Ur Rehman</title>
+    
+    <!-- 1. Tailwind CSS (Production-ready CDN for standalone files) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Google Fonts (Premium Selection) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <!-- 3. Lucide Icons (Reliable CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Outfit"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#1e293b', 
+                            900: '#0f172a',
+                        },
+                        gold: {
+                            500: '#d4af37',
+                            600: '#b4941f',
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(99, 102, 241, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 20%);
+            color: #334155;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+            border-color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200/60">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-slate-900 text-white p-2 rounded-lg">
+                    <i data-lucide="infinity" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-slate-900 leading-tight tracking-tight">NameAnalyst</h1>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Premium Edition</p>
+                </div>
+            </div>
+            <div class="hidden md:flex flex-col items-end">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Developed By</span>
+                <span class="text-sm font-semibold text-slate-900">Latif Ur Rehman</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-16 pb-24 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Header Section -->
+            <header class="text-center mb-16 fade-in" style="animation-delay: 0.1s;">
+                <span class="inline-block py-1 px-3 rounded-full bg-slate-100 text-slate-500 text-xs font-bold uppercase tracking-wider mb-4 border border-slate-200">
+                    Algorithm Demonstration
+                </span>
+                <h2 class="text-5xl md:text-6xl font-serif font-bold text-slate-900 mb-6 tracking-tight">
+                    The Mathematics <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-400 italic">of your name</span>
+                </h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto font-light leading-relaxed">
+                    Explore how Pythagorean, Chaldean, and Abjad systems translate text into numbers. 
+                    <br><span class="text-sm opacity-70">(Purely for educational analysis)</span>
+                </p>
+            </header>
+
+            <!-- Developer Disclaimer (Important) -->
+            <div class="max-w-3xl mx-auto mb-12 fade-in" style="animation-delay: 0.2s;">
+                <div class="bg-white border-l-4 border-slate-900 rounded-r-xl shadow-premium p-6 flex gap-5 items-start">
+                    <div class="shrink-0 bg-slate-50 p-3 rounded-full">
+                        <i data-lucide="user-check" class="w-6 h-6 text-slate-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-slate-900 mb-1">Developer's Note</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            This application is engineered by <strong>Latif Ur Rehman</strong> to demonstrate string-manipulation algorithms. 
+                            <span class="block mt-2 font-medium text-slate-800">
+                                Disclaimer: Latif does not believe in Numerology or that these numbers influence fate. This tool is strictly for informational and entertainment purposes.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="max-w-xl mx-auto mb-20 fade-in relative z-10" style="animation-delay: 0.3s;">
+                <div class="bg-white rounded-2xl shadow-premium p-2 flex items-center border border-slate-100 focus-within:ring-2 focus-within:ring-slate-900/10 transition-all">
+                    <div class="pl-4 text-slate-400">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </div>
+                    <input type="text" id="nameInput" 
+                        class="w-full bg-transparent border-none text-lg text-slate-900 placeholder-slate-400 focus:ring-0 px-4 py-3"
+                        placeholder="Enter full name..." autocomplete="off">
+                    <button onclick="analyzeName()" 
+                        class="bg-slate-900 hover:bg-slate-800 text-white font-medium px-8 py-3 rounded-xl transition-all transform active:scale-95 shadow-lg shadow-slate-900/20">
+                        Analyze
+                    </button>
+                </div>
+                <p id="errorMsg" class="absolute -bottom-8 left-0 w-full text-center text-red-500 text-sm font-medium hidden">
+                    Please enter a valid name (letters only).
+                </p>
+            </div>
+
+            <!-- Results Grid -->
+            <div id="resultsArea" class="hidden">
+                
+                <div class="flex items-center justify-between mb-8 px-2">
+                    <h3 class="text-xl font-bold text-slate-900">Analysis Report</h3>
+                    <div class="h-px flex-grow bg-slate-200 ml-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    
+                    <!-- Pythagorean Card -->
+                    <div class="glass-panel rounded-2xl p-8 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="triangle" class="w-24 h-24"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-[10px] font-bold tracking-widest text-indigo-500 uppercase mb-2">Modern Western</div>
+                            <h4 class="font-serif text-2xl text-slate-800 mb-6">Pythagorean</h4>
+                            <div class="flex items-baseline gap-1 mb-6">
+                                <span class="text-6xl font-bold text-slate-900 tracking-tighter" id="res-pyth">-</span>
+                                <span class="text-sm text-slate-400 font-medium">/ 9</span>
+                            </div>
+                            <button onclick="showDetails('pyth')" class="w-full py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors flex items-center justify-center gap-2">
+                                View Calculation <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Chaldean Card -->
+                    <div class="glass-panel rounded-2xl p-8 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="star" class="w-24 h-24"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-[10px] font-bold tracking-widest text-gold-600 uppercase mb-2">Ancient Mystic</div>
+                            <h4 class="font-serif text-2xl text-slate-800 mb-6">Chaldean</h4>
+                            <div class="flex items-baseline gap-1 mb-6">
+                                <span class="text-6xl font-bold text-slate-900 tracking-tighter" id="res-chald">-</span>
+                                <span class="text-sm text-slate-400 font-medium">/ 8</span>
+                            </div>
+                            <button onclick="showDetails('chald')" class="w-full py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors flex items-center justify-center gap-2">
+                                View Calculation <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Abjad Card -->
+                    <div class="glass-panel rounded-2xl p-8 relative overflow-hidden group border-emerald-500/10">
+                        <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="moon" class="w-24 h-24"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-[10px] font-bold tracking-widest text-emerald-600 uppercase mb-2">Islamic System</div>
+                            <h4 class="font-serif text-2xl text-slate-800 mb-6">Abjad</h4>
+                            <div class="flex flex-col mb-4">
+                                <span class="text-6xl font-bold text-slate-900 tracking-tighter" id="res-abjad">-</span>
+                                <span class="text-sm font-mono text-emerald-600 mt-1 font-medium bg-emerald-50 inline-block px-2 py-1 rounded w-max" id="res-abjad-total">Total: 0</span>
+                            </div>
+                            <button onclick="showDetails('abjad')" class="w-full py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors flex items-center justify-center gap-2">
+                                View Calculation <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Breakdown Panel (Hidden) -->
+                <div id="breakdownPanel" class="hidden fade-in">
+                    <div class="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-100 p-4 flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="binary" class="w-4 h-4 text-slate-500"></i>
+                                <span class="text-sm font-bold text-slate-700 uppercase tracking-wider" id="panelTitle">Method Details</span>
+                            </div>
+                            <button onclick="document.getElementById('breakdownPanel').classList.add('hidden')" class="text-slate-400 hover:text-slate-900">
+                                <i data-lucide="x" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                        <div class="p-8 grid md:grid-cols-2 gap-10">
+                            <div>
+                                <h5 class="text-xs font-bold text-slate-400 uppercase mb-3">Formula applied</h5>
+                                <div class="font-mono text-sm leading-relaxed text-slate-600 bg-slate-50 p-4 rounded-lg border border-slate-100 break-words" id="panelFormula">
+                                    Loading...
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="text-xs font-bold text-slate-400 uppercase mb-3">Historical Context</h5>
+                                <p class="text-sm text-slate-600 leading-7" id="panelContext">
+                                    Loading...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scientific Reality Section -->
+                <div class="mt-16 border-t border-slate-200 pt-10">
+                    <div class="bg-slate-900 text-slate-300 rounded-2xl p-8 md:p-10 relative overflow-hidden">
+                        <!-- Decorative background element -->
+                        <div class="absolute -right-10 -top-10 w-64 h-64 bg-slate-800 rounded-full blur-3xl opacity-50"></div>
+                        
+                        <div class="relative z-10 flex gap-6 flex-col md:flex-row">
+                            <div class="shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                                    <i data-lucide="brain-circuit" class="w-6 h-6 text-white"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-3">The Scientific Reality</h3>
+                                <p class="mb-4 text-slate-400 leading-relaxed max-w-2xl">
+                                    The numbers shown above are derived from a practice called <strong>Isopsephy</strong>. While culturally fascinating, it's important to understand the reality:
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                                        <span>These are mathematical hashes of strings, similar to computer checksums.</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                                        <span>Belief in them is often due to the "Barnum Effect" (finding personal meaning in vague data).</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                                        <span><strong>Latif Ur Rehman</strong> advises using this tool for fun and educational curiosity only.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-sm">© 2024 NameAnalyst. All rights reserved.</p>
+            <div class="flex items-center gap-2 text-sm text-slate-900 font-medium">
+                <span>Designed & Developed by</span>
+                <span class="bg-slate-100 px-2 py-1 rounded text-xs font-bold border border-slate-200">Latif Ur Rehman</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. INITIALIZATION & DATA MAPS (Must be at top) ---
+
+        // Pythagorean System: 1-9 repeating
+        const pythMap = {
+            a:1, b:2, c:3, d:4, e:5, f:6, g:7, h:8, i:9,
+            j:1, k:2, l:3, m:4, n:5, o:6, p:7, q:8, r:9,
+            s:1, t:2, u:3, v:4, w:5, x:6, y:7, z:8
+        };
+
+        // Chaldean System: Ancient, no 9
+        const chaldMap = {
+            a:1, b:2, c:3, d:4, e:5, f:8, g:3, h:5, i:1,
+            j:1, k:2, l:3, m:4, n:5, o:7, p:8, q:1, r:2,
+            s:3, t:4, u:6, v:6, w:6, x:5, y:1, z:7
+        };
+
+        // Abjad System (Standard/Kabir): Arabic values mapped to English
+        const abjadMap = {
+            a:1, b:2, c:20, d:4, e:5, f:80, g:3, h:8, i:10, 
+            j:3, k:20, l:30, m:40, n:50, o:6, p:2, q:100, 
+            r:200, s:60, t:400, u:6, v:6, w:6, x:60, y:10, z:7
+        };
+
+        // Helper: Reduce to single digit
+        function reduce(num) {
+            if (num === 0) return 0;
+            return (num - 1) % 9 + 1;
+        }
+
+        // Global state for showing details
+        let currentAnalysis = {};
+
+        // --- 2. MAIN LOGIC ---
+
+        function analyzeName() {
+            const input = document.getElementById('nameInput');
+            const resultsArea = document.getElementById('resultsArea');
+            const errorMsg = document.getElementById('errorMsg');
+            const breakdownPanel = document.getElementById('breakdownPanel');
+
+            const rawName = input.value;
+            // Clean: lowercase and remove anything that isn't a-z
+            const cleanName = rawName.toLowerCase().replace(/[^a-z]/g, '');
+
+            if (cleanName.length < 2) {
+                errorMsg.classList.remove('hidden');
+                resultsArea.classList.add('hidden');
+                return;
+            }
+            errorMsg.classList.add('hidden');
+
+            // --- A. Pythagorean Calc ---
+            let pSum = 0;
+            let pArr = [];
+            for (let char of cleanName) {
+                let val = pythMap[char] || 0;
+                pSum += val;
+                pArr.push(`${char.toUpperCase()}(${val})`);
+            }
+            const pFinal = reduce(pSum);
+
+            // --- B. Chaldean Calc ---
+            let cSum = 0;
+            let cArr = [];
+            for (let char of cleanName) {
+                let val = chaldMap[char] || 0;
+                cSum += val;
+                cArr.push(`${char.toUpperCase()}(${val})`);
+            }
+            const cFinal = reduce(cSum);
+
+            // --- C. Abjad Calc ---
+            let aSum = 0;
+            let aArr = [];
+            for (let char of cleanName) {
+                let val = abjadMap[char] || 0;
+                aSum += val;
+                aArr.push(`${char.toUpperCase()}(${val})`);
+            }
+            const aFinal = reduce(aSum);
+
+            // --- 3. UI UPDATES ---
+
+            // Set Texts
+            document.getElementById('res-pyth').innerText = pFinal;
+            document.getElementById('res-chald').innerText = cFinal;
+            document.getElementById('res-abjad').innerText = aFinal;
+            document.getElementById('res-abjad-total').innerText = `Total Sum: ${aSum}`;
+
+            // Save Data for Breakdown
+            currentAnalysis = {
+                pyth: {
+                    title: "Pythagorean Method",
+                    formula: pArr.join(' + ') + ` = ${pSum} → ${pFinal}`,
+                    context: "Attributed to Pythagoras (c. 570–495 BC). It assigns numbers 1-9 sequentially to the alphabet. This is the most common method in Western Numerology."
+                },
+                chald: {
+                    title: "Chaldean Method",
+                    formula: cArr.join(' + ') + ` = ${cSum} → ${cFinal}`,
+                    context: "This system has roots in Ancient Babylon. Unlike the Western system, it relies on the sound/vibration of the letter. The number 9 is considered sacred and is not assigned to any letter."
+                },
+                abjad: {
+                    title: "Islamic Abjad (Ilm-ul-Adad)",
+                    formula: aArr.join(' + ') + ` = ${aSum}`,
+                    context: "Based on the numeric values of the Arabic alphabet. English letters are mapped to their nearest phonetic Arabic equivalent. Historically used for chronograms and coding."
+                }
+            };
+
+            // Show Results with Animation
+            resultsArea.classList.remove('hidden');
+            resultsArea.classList.add('fade-in');
+            
+            // Hide breakdown if it was open from previous
+            breakdownPanel.classList.add('hidden');
+        }
+
+        // Show Breakdown Modal
+        function showDetails(type) {
+            const data = currentAnalysis[type];
+            if(!data) return;
+
+            document.getElementById('panelTitle').innerText = data.title;
+            document.getElementById('panelFormula').innerText = data.formula;
+            document.getElementById('panelContext').innerText = data.context;
+
+            const panel = document.getElementById('breakdownPanel');
+            panel.classList.remove('hidden');
+            // Scroll to panel
+            panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Initialize Icons once DOM is loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.warn("Lucide icons failed to load.");
+            }
+        });
+
+        // Enter key listener
+        document.getElementById('nameInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                analyzeName();
+            }
+        });
+
+    </script>
+</body>
+</html>
